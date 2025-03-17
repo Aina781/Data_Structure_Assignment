@@ -8,6 +8,7 @@
     2) Kambere Elton Jesse
     3) Medhanie Eyob
     4) Niza
+    5) Vrajni Dilip Halai
     */
 #define MAX_ANIMALS 100
 #define MAX_NAME_LENGTH 50
