@@ -1,4 +1,5 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 /* This assignment was done by Group members
 1) Medhanie Eyob
 2)Kambere Elton Blessing
@@ -6,7 +7,6 @@
 4) Vrajni Dilip Halai
 5) Aina Iyanuoluwa Oluwatimilehin
 */
-using namespace std;
 
 int print_array(int arr[], int size);
 int delete_element(int arr[], int *size, int index);
