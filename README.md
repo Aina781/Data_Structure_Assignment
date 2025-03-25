@@ -15,4 +15,16 @@ MERGING ARRAYS
 
 ![WhatsApp Image 2025-03-20 at 10 13 50_1e7d607e](https://github.com/user-attachments/assets/399445a3-b56f-4cb4-bab2-806d0531e36a)
 
+sorted Arrays
+![WhatsApp Image 2025-03-25 at 11 38 12_4fd4a46c](https://github.com/user-attachments/assets/960f7380-effd-4693-ba61-62df93772e3e)
+
+Unsorted Array
+![WhatsApp Image 2025-03-25 at 11 50 30_36dcc8df](https://github.com/user-attachments/assets/43d958a2-4af7-4c53-8c65-1fa6c687ef14)
+
+Deleting Array
+![WhatsApp Image 2025-03-25 at 12 02 59_7e88d2f6](https://github.com/user-attachments/assets/7c2fe08b-6a1d-4c00-89c1-ea212416db47)
+
+
+
+
 
