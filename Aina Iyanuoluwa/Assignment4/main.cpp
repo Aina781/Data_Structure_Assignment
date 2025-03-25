@@ -1,4 +1,5 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 
 /* This assignment was done by Group members
 1) Medhanie Eyob
@@ -7,8 +8,6 @@
 4) Vrajni Dilip Halai
 5) Aina Iyanuoluwa Oluwatimilehin
 */
-
-using namespace std;
 
 #define Max 10 //number of strings
 #define Len 20 //length of @string
