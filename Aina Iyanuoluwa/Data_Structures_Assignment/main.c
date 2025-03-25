@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
-//Question 1 finding average.
 
 /*
 Group work by
@@ -10,55 +8,67 @@ Group work by
     4) Niza
     5) Vrajni Dilip Halai
     */
-int main()
-{
-   int mathematics,chemistry,physics;
-   float average1,average2,average3,average4,Total_Average;
-   //ASSIGNMENTS
-   printf("Enter your score in percentage for Assignments. \nMATHS:");
-   scanf("%d",&mathematics);
-   printf("PHYSICS:");
-   scanf("%d",&physics);
-   printf("CHEMISTRY:");
-   scanf("%d",&chemistry);
-   average1=(float)mathematics + (float)chemistry + (float)physics;
-   average1= average1/3;
-   printf("Average mark for Assignments is %.1f",average1);
 
-   //COURSEWORK
-    printf("\nEnter your score in percentage for Coursework. \nMATHS:");
-   scanf("%d",&mathematics);
-   printf("PHYSICS:");
-   scanf("%d",&physics);
-   printf("CHEMISTRY:");
-   scanf("%d",&chemistry);
-   average2=(float)mathematics + (float)chemistry + (float)physics;
-   average2= average2/3;
-   printf("Average for Coursework is %.1f",average2);
+// Structure to hold marks for each subject
+struct SubjectMarks {
+    float assignment;
+    float coursework;
+    float midTerm;
+    float endTerm;
+};
 
-   //MIDTERM
-      printf("\nEnter your score in percentage for Midterm. \nMATHS:");
-   scanf("%d",&mathematics);
-   printf("PHYSICS:");
-   scanf("%d",&physics);
-   printf("CHEMISTRY:");
-   scanf("%d",&chemistry);
-   average3=(float)mathematics + (float)chemistry + (float)physics;
-   average3= average3/3;
-   printf("Average for Midterm is %.1f",average3);
+// Function to get a valid mark between 0 and 100
+float getValidMark(const char* prompt) {
+    float mark;
+    while (1) {
+        printf("%s", prompt);
+        scanf("%f", &mark);
+        
+        // Check if input is valid (0-100)
+        if (mark >= 0 && mark <= 100) {
+            return mark;
+        }
+        printf("Invalid input! Enter a number between 0 and 100.\n");
+        
+        // Clear input buffer in case of non-numeric input
+        while (getchar() != '\n');
+    }
+}
 
-   //ENDOFTERM
-      printf("\nEnter your score in percentage for End Of Term. \nMATHS:");
-   scanf("%d",&mathematics);
-   printf("PHYSICS:");
-   scanf("%d",&physics);
-   printf("CHEMISTRY:");
-   scanf("%d",&chemistry);
-   average4=(float)mathematics + (float)chemistry + (float)physics;
-   average4= average4/3;
-   printf("Average for End Of Term is %.1f",average4);
+// Function to input marks for a subject
+void getMarks(struct SubjectMarks marks, const char subjectName) {
+    printf("\nEnter marks for %s:\n", subjectName);
+    marks->assignment = getValidMark("Assignment (out of 100): ");
+    marks->coursework = getValidMark("Coursework (out of 100): ");
+    marks->midTerm = getValidMark("Mid-term Exam (out of 100): ");
+    marks->endTerm = getValidMark("End-term Exam (out of 100): ");
+}
 
-   Total_Average=(average1 + average2 + average3 +average4)/4;
-   printf("\nYour Total Average is %.1f",Total_Average);
+// Function to calculate average for a subject
+float calculateAverage(const struct SubjectMarks marks) {
+    return (marks.assignment + marks.coursework + marks.midTerm + marks.endTerm) / 4.0f;
+}
+
+int main() {
+    const int numSubjects = 3;
+    char* subjects[] = {"Physics", "Chemistry", "Mathematics"};
+    struct SubjectMarks marks[numSubjects];
+    float totalAverage = 0;
+
+    // Get marks for each subject
+    for (int i = 0; i < numSubjects; i++) {
+        getMarks(&marks[i], subjects[i]);
+    }
+
+    // Display results
+    printf("\nResults:\n");
+    for (int i = 0; i < numSubjects; i++) {
+        float avg = calculateAverage(marks[i]);
+        printf("%s Average: %.2f\n", subjects[i], avg);
+        totalAverage += avg;
+    }
+
+    printf("Overall Average: %.2f\n", totalAverage / numSubjects);
+
     return 0;
 }
