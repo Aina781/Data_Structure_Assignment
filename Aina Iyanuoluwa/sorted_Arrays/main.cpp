@@ -1,5 +1,5 @@
-#include <iostream>
-
+#include <stdio.h>
+#include <stdlib.h>
 /* This assignment was done by Group members
 1) Medhanie Eyob
 2)Kambere Elton Blessing
@@ -7,8 +7,6 @@
 4) Vrajni Dilip Halai
 5) Aina Iyanuoluwa Oluwatimilehin
 */
-
-using namespace std;
 
 void merge (int a[],int m, int b[], int n, int r[]);
 
