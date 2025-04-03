@@ -17,14 +17,14 @@ public:
 
     // Push operation: Adds a new friend to the stack
     void push(const string friendName) {
-        if (top < maxSize - 1) {  // Check if there's space for more friends
-            top++;
-            friends[top] = friendName;  // Add friend to the stack
-            cout << friendName << " has been added to your stack!" << endl;
-        } else {
-            cout << "No more space for friends!" << endl;
-        }
+    if (top == maxSize - 1) {  // Check if the stack is full
+        cout << "No more space for friends!" << endl;
+    } else {
+        top++;  // Increment top to point to the next available position
+        friends[top] = friendName;  // Add the new friend to the stack
+        cout << friendName << " has been added to your stack!" << endl;
     }
+}
 
     // Pop operation: Removes a friend from the stack
     string removeByName(const string friendName) {
